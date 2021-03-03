@@ -211,8 +211,14 @@ body, input, textarea, button{
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 60px;
+    padding: 0 15px;
     
 }
+
+.sobre-section .section-title{
+    padding: 0;
+}
+
 .section-title h1{    
     /* background-color: blue; */
     display:inline-block;
@@ -321,3 +327,76 @@ body, input, textarea, button{
     top:30px;
     animation: ani01 2s linear infinite;
 }
+
+/* Section 2 */
+
+.section2{
+    padding:40px 0 40px;
+}
+
+.section2 .section2-item-box{
+    flex: 0 0 33.33%;
+    max-width: 33%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.section2 .section2-item-box .section2-img{
+    position: relative;
+    overflow:hidden;
+}
+
+.section2 .section2-item-box .section2-img img{
+    width: 100%;
+    display:block;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.section2 .section2-item-box .section2-img:hover img{
+    filter:grayscale(0);
+    transform: scale(1.1);
+}
+
+.section2 .section2-item-box .section2-img .overlay{
+    position:absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width:100%;
+    background-color: #000000;
+    opacity:0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.section2 .section2-item-box .section2-img:hover .overlay{
+    background-color: transparent;
+}
+
+
+.section2 .section2-item-box .section2-img .overlay h4{
+    color: #ffffff;
+    font-size: 20px;
+    margin:0;
+    text-align: center;
+    transition: all 0.5s ease;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+
+.section2 .section2-item-box .section2-img .overlay:hover h4{
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+
+/* Section 3 */
+
+.section3{
+    padding:40px 0 40px;
+}
+
