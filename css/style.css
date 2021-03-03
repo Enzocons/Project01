@@ -344,6 +344,7 @@ body, input, textarea, button{
 .section2 .section2-item-box .section2-img{
     position: relative;
     overflow:hidden;
+    cursor: pointer;
 }
 
 .section2 .section2-item-box .section2-img img{
@@ -356,6 +357,7 @@ body, input, textarea, button{
 .section2 .section2-item-box .section2-img:hover img{
     filter:grayscale(0);
     transform: scale(1.1);
+    
 }
 
 .section2 .section2-item-box .section2-img .overlay{
@@ -400,3 +402,61 @@ body, input, textarea, button{
     padding:40px 0 40px;
 }
 
+.section3 .section3-item-box{
+    flex: 0 0 33.33%;
+    max-width: 33%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.section3 .section3-item-box .section3-img{
+    position: relative;
+    overflow:hidden;
+    cursor: pointer;
+}
+
+.section3 .section3-item-box .section3-img img{
+    width: 100%;
+    display:block;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+.section3 .section3-item-box .section3-img:hover img{
+    transform:scale(1);
+}
+
+.section3 .section3-item-box .section3-img .overlay{
+    position:absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width:100%;
+    background-color: transparent;
+    color: #ffffff;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    transition: all 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+}
+
+.section3 .section3-item-box .section3-img:hover .overlay{
+    opacity: 1;
+}
+
+.section3 .section3-item-box .section3-img .overlay h4{
+    color: #ffffff;
+    font-size: 20px;
+    margin:0;
+    text-align: center;
+    transition: all 0.5s ease;
+    font-weight: 900;
+    text-transform: capitalize;
+    transform:translateX(30px)
+}
+
+.section3 .section3-item-box .section3-img:hover .overlay h4{
+    transform:translateX(0px);
+}
