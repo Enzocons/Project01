@@ -43,6 +43,33 @@ body, input, textarea, button{
     }
 }
 
+/* preloader */
+.preloader{
+	position: fixed;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	background-color: #111111;
+	z-index: 1099;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.6s ease;
+ }
+ .preloader.loaded{
+ 	visibility: hidden;
+ 	opacity:0;
+ 	z-index: -99;
+ }
+ .preloader .loader{
+ 	height: 30px;
+ 	width: 30px;
+ 	border:2px solid #FF9800;
+ 	border-right:2px solid transparent;
+ 	border-radius:50%;
+ 	animation: ani01 2s linear infinite;
+ }
 
 /* Header */
 
@@ -52,6 +79,12 @@ body, input, textarea, button{
     top:0;
     width: 100%;
     z-index: 99;
+    transition: all 0.5s ease;
+}
+
+.header.fixed{
+    position: fixed;
+    background-color: #ffffff;
 }
 
 .header .brand-name{
@@ -66,9 +99,64 @@ body, input, textarea, button{
     font-weight: 900;
     letter-spacing: 2px;
     transition: all 0.5s ease;
+    
+}
+.header.fixed .brand-name a{
+    color: #000000;
 }
 .header .brand-name a:hover{
     color:#00c2f3;
+}
+
+.header .nav-toggle{
+    width: 40px;
+    height: 30px;
+    border: 1px solid #ffffff ;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    display: none;
+}
+
+.header.fixed .nav-toggle{
+    border-color:#000000
+}
+
+.header .nav-toggle span{
+    height: 1px;
+    display: block;
+    width: 16px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.header .nav-toggle span::before,
+.header .nav-toggle span::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #ffffff;
+    transition:  all 0.5s ease;
+}
+
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span::before,
+.header.fixed .nav-toggle span::after{
+    background-color: #000000;
+}
+
+.header .nav-toggle span::before{
+    transform: translateY(-6px);
+}
+
+.header .nav-toggle span::after{
+    transform: translateY(6px);
 }
 
 .header .nav{
@@ -98,6 +186,11 @@ body, input, textarea, button{
     transition: all 0.5s ease;
 }
 
+.header.fixed .nav ul li a{
+    color:#000000;
+}
+
+.header.fixed .nav ul li a:hover,
 .header .nav ul li a:hover{
     color:#00c2f3;
 }
@@ -728,4 +821,123 @@ body, input, textarea, button{
     flex: 0 0 100%;
     color: #555555;
     font-weight: 700;
+}
+
+
+/* responsive */
+
+
+@media(max-width:904px){
+
+    .sobre-section .sobre-img{
+        flex: 0 0 49.33%;
+        max-width: 49.33%;
+    }
+
+    .sobre-section .sobre-text{
+        flex: 0 0 49.66%;
+        max-width: 49.66%;
+    }
+}
+
+@media(max-width:767px){
+
+    .header{
+        padding: 7px 0 ;
+        position: fixed;
+    }
+
+    .header .nav-toggle{
+        display: flex;
+        margin-right: 15px;
+    }
+
+    .header .nav{
+        flex: 0 0 100%;
+        max-width: 100%;
+        background-color: #ffffff;
+        padding: 0;
+        display: none;
+    }
+
+    .header.fixed .nav{
+        border-top: 1px solid #cccccc;
+    }
+
+    .header .nav ul li{
+        display: block;
+        margin-right: 25px;
+    }
+
+    .header.fixed .nav ul li a,
+    .header .nav ul li a{
+        color: #000000;
+        padding: 15px 0;
+    }
+
+    .home-section .home-content h1{
+        font-size: 40px;
+    }
+
+    .sobre-section .sobre-text,
+    .sobre-section .sobre-img{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .sobre-section .sobre-text{
+        text-align: center;
+        margin-top: 25px;
+    }
+    .sobre-text .btn-01{
+        text-align: center;
+    }
+
+    .section2 .section2-item-box {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .section3 .section3-item-box {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .contact-section .contact-form {
+        padding: 0px 35px;
+    }
+}
+
+@media(max-width:575px){
+    
+
+    .sobre-section .sobre-text .stats .stat-box{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .home-section .home-content h1{
+        font-size: 25px;
+        letter-spacing: 5px;
+    }
+
+    .contact-section .contact-form .form .input-group.left,
+    .contact-section .contact-form .form .input-group.right {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .section2 .section2-item-box {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .section3 .section3-item-box {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-section .contact-form .form {
+        padding: 55px 10px;
+    }
 }
